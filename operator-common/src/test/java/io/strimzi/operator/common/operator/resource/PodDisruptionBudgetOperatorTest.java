@@ -4,9 +4,9 @@
  */
 package io.strimzi.operator.common.operator.resource;
 
-import io.fabric8.kubernetes.api.model.policy.v1beta1.PodDisruptionBudget;
-import io.fabric8.kubernetes.api.model.policy.v1beta1.PodDisruptionBudgetBuilder;
-import io.fabric8.kubernetes.api.model.policy.v1beta1.PodDisruptionBudgetList;
+import io.fabric8.kubernetes.api.model.policy.v1.PodDisruptionBudget;
+import io.fabric8.kubernetes.api.model.policy.v1.PodDisruptionBudgetBuilder;
+import io.fabric8.kubernetes.api.model.policy.v1.PodDisruptionBudgetList;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.PolicyAPIGroupDSL;
@@ -25,7 +25,7 @@ public class PodDisruptionBudgetOperatorTest extends AbstractResourceOperatorTes
         PolicyAPIGroupDSL mockPolicy = mock(PolicyAPIGroupDSL.class);
         V1beta1PolicyAPIGroupDSL mockV1beta1 = mock(V1beta1PolicyAPIGroupDSL.class);
         when(mockPolicy.v1beta1()).thenReturn(mockV1beta1);
-        when(mockV1beta1.podDisruptionBudget()).thenReturn(op);
+        when(mockv1.PodDisruptionBudget()).thenReturn(op);
         when(mockClient.policy()).thenReturn(mockPolicy);
     }
 
